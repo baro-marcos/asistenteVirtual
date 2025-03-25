@@ -1,0 +1,84 @@
+OLLAMA
+------
+
+https://ollama.com
+
+Ollama es una herramienta para ejecutar localmente grandes modelos de redes neuronales.
+Es una plataforma de inteligencia artificial que permite usar modelos LLM (Llama 3, Phi 3, Mistral, Gemma 2) de manera local para generar respuestas y proporcionar 
+informacion sobre el contenido enviado.
+Se abre en el puerto 11434
+
+Desde cmd o powershell:
+
+Arancar el servidor: ollama serve
+
+Para descargar modelos sin que se ejecuten: ollama pull llama3.1:8b
+
+Para ver todos los modelos que tenemos: ollama list
+
+Borrar un modelo: ollama rm llama3.2
+
+Para arrancar un modelo: ollama run llama3.2
+
+Con parametros: ollama run llava "What's in this image? /Users/jmorgan/Desktop/smile.png" o ollama run llama3.2 "Summarize this file: $(cat README.md)"
+
+Para salir: Use Ctrl + d o /bye
+
+Para detener un modelo que se encuentra corriendo: ollama stop llama3.2
+
+Obtener informacion del modelo: ollama show llama3.2
+
+Para saber los modelos que estan en memoria: ollama ps
+Donde: 100% GPU el modelo esta completamente cargado en la GPU. 100% CPU el modelo esta completamente cargado en la memoria del sistema.
+48%/52% CPU/GPU el modelo esta cargado parcialmente.
+
+-----------
+
+Familia de modelos Llama 3.1 disponible:
+
+8B
+70B
+405B
+
+Llama 3.1 405B es el primer modelo disponible abiertamente que rivaliza con los mejores modelos de IA en cuanto a capacidades de vanguardia 
+en conocimiento general, direccionabilidad, matematicas, uso de herramientas y traducción multilingue.
+
+Las versiones mejoradas de los modelos 8B y 70B son multilingues y tienen una longitud de contexto significativamente mayor (128K), 
+un uso de herramientas de vanguardia y, en general, capacidades de razonamiento mas solidas. Esto permite que los modelos mas recientes 
+de Meta admitan casos de uso avanzados, como resúmenes de texto extenso, agentes conversacionales multilingues y asistentes de programacion.
+
+Evaluaciones de modelos
+Para esta version, Meta ha evaluado el rendimiento en mas de 150 conjuntos de datos de referencia que abarcan una amplia gama de idiomas. 
+Ademas, Meta realizo extensas evaluaciones humanas que comparan Llama 3.1 con modelos de la competencia en escenarios reales. 
+La evaluacion experimental de Meta sugiere que nuestro modelo insignia es competitivo con los principales modelos basicos en diversas tareas, 
+incluyendo GPT-4, GPT-4o y Claude 3.5 Sonnet. Asimismo, los modelos mas pequeños de Meta son competitivos con modelos cerrados y abiertos 
+con un numero similar de parametros.
+
+----------
+
+Cambiar la ubicación de instalacion:
+
+Para instalar la aplicacion Ollama en una ubicacion distinta a su directorio de inicio, inicie el instalador con:
+
+OllamaSetup.exe /DIR="D:\X\Ollama"
+
+Cambiar la ubicacion del modelo:
+
+Para cambiar la ubicacion donde Ollama almacena los modelos descargados en lugar de usar su directorio de inicio, configure la variable 
+de entorno OLLAMA_MODELS en su cuenta de usuario.
+Inicie la aplicacion Configuración (Windows 11) o Panel de control (Windows 10) y busque las variables de entorno.
+Haga clic en "Editar variables de entorno para su cuenta".
+Edite o cree una nueva variable para su cuenta de usuario para OLLAMA_MODELS donde desea almacenar los modelos:
+D:\X\Ollama\Modelos
+Haga clic en "Aceptar/Aplicar" para guardar.
+Si Ollama ya se esta ejecutando, cierre la aplicacion en la bandeja del sistema y vuelva a iniciarla desde el menu Inicio o desde una nueva 
+terminal iniciada despues de guardar las variables de entorno.
+
+Desinstalar:
+Sección Agregar o quitar programas de la Configuracion de Windows, puedes desinstalar Ollama.
+Si has cambiado la ubicacion de OLLAMA_MODELS, el instalador no eliminara los modelos descargados.
+
+-------------
+
+¿Ollama envia mis indicaciones y respuestas a ollama.com?
+No. Ollama se ejecuta localmente y los datos de las conversaciones no salen de tu equipo.
