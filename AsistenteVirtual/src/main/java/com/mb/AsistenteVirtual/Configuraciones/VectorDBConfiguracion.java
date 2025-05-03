@@ -49,7 +49,7 @@ public class VectorDBConfiguracion {
             TextSplitter textSplitter = new TokenTextSplitter(); // Para dividir los documentos en fragmentos o tokens
 
             List<Document> splitDocumentos = textSplitter.apply(documentos);
-            vectorStore.add(documentos);
+            vectorStore.add(splitDocumentos); // documentos
             vectorStore.save(vectorDbFile);
             
         }
